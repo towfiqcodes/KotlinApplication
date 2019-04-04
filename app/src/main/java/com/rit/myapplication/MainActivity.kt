@@ -10,6 +10,11 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var button1: Button
+    lateinit var button2: Button
+    lateinit var button3: Button
+    lateinit var button4: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,14 +23,13 @@ class MainActivity : AppCompatActivity() {
         myfunction()
 
 
-
     }
 
     private fun myfunction() {
-        var button1 = findViewById<Button>(R.id.btnHello1)
-        var button2 = findViewById<Button>(R.id.btnHello2)
-        var button3 = findViewById<Button>(R.id.btnHello3)
-        var button4 = findViewById<Button>(R.id.btnHello4)
+        button1 = findViewById<Button>(R.id.btnHello1)
+        button2 = findViewById<Button>(R.id.btnHello2)
+        button3 = findViewById<Button>(R.id.btnHello3)
+        button4 = findViewById<Button>(R.id.btnHello4)
 
         var listener: View.OnClickListener = View.OnClickListener { view ->
 
@@ -47,7 +51,7 @@ class MainActivity : AppCompatActivity() {
     }*/
 
             when (id) {
-                R.id.btnHello1 ->startActivity(Intent(this@MainActivity, AnotherActivity::class.java))
+                R.id.btnHello1 -> startActivity(Intent(this@MainActivity, AnotherActivity::class.java))
 
                 R.id.btnHello2 -> textView.text = "You Won the Prize"
                 R.id.btnHello3 -> textView.text = "Worng button ? You Pressed" + button.text
@@ -61,6 +65,6 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener(listener)
         button3.setOnClickListener(listener)
         button4.setOnClickListener(listener)
-        }
+    }
 
 }
